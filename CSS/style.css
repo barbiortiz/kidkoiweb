@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 100;
+  top: 0;
+ 
+  transition: background-color 0.3s;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  background-color: black;
+}
+
+#hero h1 {
+  color: white;
+  font-size: 4em;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  margin: 0;
+  line-height: 1.2em;
+  padding: 0 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 1200px) {
+  #hero h1 {
+    font-size: 3.5em;
+  }
+}
+
+@media (max-width: 992px) {
+  #hero h1 {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 2.5em;
+    line-height: 1.4;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  #hero h1 {
+    font-size: 2em;
+    line-height: 1.5;
+  }
+}
+
+h1 {
+  color: black;
+  font-size: 2.5em;
+  text-align: center;
+}
+h2 {
+  font-size: 2.7em;
+  color: #f8be03;
+}
+h3 {
+  font-size: 2em;
+  color: white;
+}
+p {
+  color: white;
+  font-size: 1.25em;
+}
+
+button {
+  position: relative;
+  overflow: hidden;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 10px 30px;
+  border-radius: 10px;
+  border: 2px solid blueviolet;
+  background-color: blueviolet;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: transform 0.5s ease;
+}
+
+button:hover {
+  background-color: rgb(36, 8, 62);
+  color: #f8be03;
+}
+
+button:hover::before {
+  transform: translateX(50%);
+}
+.container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+header {
+  background-color: rgb(245, 245, 245);
+}
+.logokidkoi {
+  padding: 5px;
+  height: 50px;
+}
+
+header .logo {
+  margin: 0;
+  font-weight: bold;
+  color: blueviolet;
+  font-size: 1.2em;
+}
+
+header .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+
+.nav {
+  display: none;
+}
+.hamburger {
+  font-size: 2em;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+  }
+  .hamburger {
+    display: none;
+  }
+}
+
+header a {
+  padding: 5px 12px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+header a:hover {
+  color: #f8be03;
+  transform: scale(1.1);
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centrar horizontalmente */
+  text-align: center;
+  height: 90vh;
+  color: white;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("Imagenes/img0png.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#KID {
+  text-align: center;
+  padding: 40px;
+}
+
+#KID h1 {
+  color: #f8be03;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+#KID .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+#KID p {
+  flex: 1;
+  color: white;
+  font-size: 1.25em;
+  text-align: left;
+  margin: 0;
+}
+
+#KID img {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideIn 2s ease forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  #KID .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #KID p {
+    text-align: center;
+  }
+}
+
+#cards .container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.carta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8be03;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 10px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+button {
+  width: 150px;
+  font-size: 1.25em;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+button:hover {
+  background-color: rgb(36, 8, 62);
+}
+.carta img {
+  max-width: 100%;
+  height: auto;
+}
+
+#testimonio p {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5 em;
+  background-color: #319296;
+  color: white;
+  text-align: center;
+  padding: 40px;
+  margin: 0;
+  background-position: 100%;
+}
+#testimonio h2 {
+  text-align: center;
+}
+#testimonio h3 {
+  text-align: center;
+}
+
+footer {
+  background-color: #2c2c2c;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+footer .container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+footer p {
+  margin: 10px 0;
+}
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+.social-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+.social-links a:hover {
+  color: #f8be03;
+}
